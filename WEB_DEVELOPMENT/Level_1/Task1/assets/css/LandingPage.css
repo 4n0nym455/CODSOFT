@@ -1,0 +1,331 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #0a192f;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 85px;
+    width: 100%;
+    background-color: #020c1b;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+nav .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #051f46;
+    width: 100%;
+    height: 100%;
+}
+
+nav .logo {
+    text-align: start;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+
+nav .logo-img {
+
+    height: 50px; /* Makes the logo responsive */
+    width: auto; /* Maintains aspect ratio */
+    margin-left: 5rem;
+}
+
+nav .logo-text {
+    color: #6A5ACD;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: wavy;
+}
+
+.nav-links {
+    display: flex;
+    padding: 0;
+}
+
+.nav-links li {
+    transition: transform 0.3s;
+    list-style:none;
+    margin: 0 15px;
+
+}
+
+.nav-links li:hover {
+    transform: translateY(-5px);
+}
+
+.nav-links a {
+    font-size: 1.2em;
+    color: #ccd6f6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #64ffda;
+
+}
+
+.search-box {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #233554;
+    background-color: #0a192f;
+    color: #ccd6f6;
+    margin-right: 0.5rem;
+}
+
+.search-box button {
+    padding: 0.5rem 1rem;
+    background-color: #64ffda;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:background-color 0.3s ;
+}
+.search-box button:hover {
+    background-color: #6A5ACD;
+}
+
+/* Home Section */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(rgba(20, 47, 88, 0.4), rgba(13, 43, 86, 0.3)),
+                url('../images/homebg.jpg') center/cover;
+
+}
+
+.home h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.home p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.home .container {
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: #64ffda;
+    color: #0a192f;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background-color: #6A5ACD;
+}
+
+/* Sections Common Styles */
+section {
+    padding: 5rem 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #64ffda;
+}
+
+/* Services Section */
+.services {
+    background: linear-gradient(rgba(20, 47, 88, 0.4), rgba(13, 43, 86, 0.3)),
+                url('../images/servicesbg.jpg') center/cover;
+    padding: 5rem 0;
+}
+
+.services-section {
+    display: grid;
+    grid-template-areas:
+        "service1 service2 service3 service4"
+        "service5 service6 service7 .";
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Assign each service to a grid area */
+.service-content:nth-child(1) { grid-area: service1; }
+.service-content:nth-child(2) { grid-area: service2; }
+.service-content:nth-child(3) { grid-area: service3; }
+.service-content:nth-child(4) { grid-area: service4; }
+.service-content:nth-child(5) { grid-area: service5; }
+.service-content:nth-child(6) { grid-area: service6; }
+.service-content:nth-child(7) { grid-area: service7; }
+
+
+.services-section::after {
+    content: "";
+    grid-area: 2 / 1 / 3 / 2; /* Place in the first column of the second row */
+    width: 100%; /* Take up full width of the column */
+}
+
+.services-section::before {
+    content: "";
+    grid-area: 2 / 5 / 3 / 6; /* Place in the last column of the second row */
+    width: 100%; /* Take up full width of the column */
+}
+.service-content {
+    background-color: #112240;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.service-content:hover {
+    background-color: #6A5ACD;
+    transform: translateY(-10px);
+}
+
+.service-content i {
+    font-size: 2.5rem;
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #112240;
+    border: 1px solid #233554;
+    color: #ccd6f6;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #64ffda;
+    color: #0a192f;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button i {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 4px;
+    background-color: aquamarine;
+    padding: 7px 12px;
+}
+
+.button i:hover {
+    background-color: #6A5ACD;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #020c1b;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .services-section {
+        grid-template-areas:
+            "service1 service2 service3"
+            "service4 service5 service6"
+            "service7 . .";
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .services-section {
+        grid-template-areas:
+            "service1"
+            "service2"
+            "service3"
+            "service4"
+            "service5"
+            "service6"
+            "service7";
+            gap: 2rem;
+    }
+
+    .home h2 {
+        font-size: 2.5rem;
+    }
+}
